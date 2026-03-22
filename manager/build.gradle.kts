@@ -9,10 +9,10 @@ val coreVerName: String by rootProject.extra
 
 plugins {
     alias(libs.plugins.agp.app)
-    alias(npatch.plugins.compose.compiler)
-    alias(npatch.plugins.google.devtools.ksp)
-    alias(npatch.plugins.rikka.tools.refine)
-    alias(npatch.plugins.kotlin.android)
+    alias(mhsmpatch.plugins.compose.compiler)
+    alias(mhsmpatch.plugins.google.devtools.ksp)
+    alias(mhsmpatch.plugins.rikka.tools.refine)
+    alias(mhsmpatch.plugins.kotlin.android)
     id("kotlin-parcelize")
 }
 
@@ -49,7 +49,7 @@ android {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
 
-    namespace = "org.lsposed.npatch"
+    namespace = "org.lsposed.mhsmpatch"
 
     applicationVariants.all {
         kotlin.sourceSets {
@@ -83,7 +83,7 @@ afterEvaluate {
             dependsOn("assemble$variantCapped")
             from(variant.outputs.map { it.outputFile })
             into("${rootProject.projectDir}/out/$variantLowered")
-            rename(".*.apk", "NPatch-v$verName-$verCode-$variantLowered.apk")
+            rename(".*.apk", "MHSMPatch-v$verName-$verCode-$variantLowered.apk")
         }
     }
 }
@@ -94,37 +94,37 @@ dependencies {
     implementation(projects.share.android)
     implementation(projects.share.java)
 
-    implementation(platform(npatch.androidx.compose.bom))
-    implementation(npatch.androidx.activity.compose)
-    implementation(npatch.androidx.compose.material.icons.extended)
-    implementation(npatch.androidx.compose.material3)
-    implementation(npatch.androidx.compose.ui)
-    implementation(npatch.androidx.compose.ui.tooling.preview)
-    implementation(npatch.androidx.core.ktx)
-    implementation(npatch.androidx.lifecycle.viewmodel.compose)
-    implementation(npatch.androidx.navigation.compose)
+    implementation(platform(mhsmpatch.androidx.compose.bom))
+    implementation(mhsmpatch.androidx.activity.compose)
+    implementation(mhsmpatch.androidx.compose.material.icons.extended)
+    implementation(mhsmpatch.androidx.compose.material3)
+    implementation(mhsmpatch.androidx.compose.ui)
+    implementation(mhsmpatch.androidx.compose.ui.tooling.preview)
+    implementation(mhsmpatch.androidx.core.ktx)
+    implementation(mhsmpatch.androidx.lifecycle.viewmodel.compose)
+    implementation(mhsmpatch.androidx.navigation.compose)
     implementation(libs.androidx.preference)
-    implementation(npatch.androidx.room.ktx)
-    implementation(npatch.androidx.room.runtime)
+    implementation(mhsmpatch.androidx.room.ktx)
+    implementation(mhsmpatch.androidx.room.runtime)
 
-    implementation(npatch.google.accompanist.navigation.animation)
-    implementation(npatch.google.accompanist.pager)
-    implementation(npatch.google.accompanist.swiperefresh)
+    implementation(mhsmpatch.google.accompanist.navigation.animation)
+    implementation(mhsmpatch.google.accompanist.pager)
+    implementation(mhsmpatch.google.accompanist.swiperefresh)
     implementation(libs.material)
     implementation(libs.gson)
-    implementation(npatch.rikka.shizuku.api)
-    implementation(npatch.rikka.shizuku.provider)
-    implementation(npatch.rikka.refine)
-    implementation(npatch.raamcosta.compose.destinations)
+    implementation(mhsmpatch.rikka.shizuku.api)
+    implementation(mhsmpatch.rikka.shizuku.provider)
+    implementation(mhsmpatch.rikka.refine)
+    implementation(mhsmpatch.raamcosta.compose.destinations)
     implementation(libs.appiconloader)
     implementation(libs.hiddenapibypass)
 
-    annotationProcessor(npatch.androidx.room.compiler)
-    compileOnly(npatch.rikka.hidden.stub)
-    ksp(npatch.androidx.room.compiler)
-    ksp(npatch.raamcosta.compose.destinations.ksp)
+    annotationProcessor(mhsmpatch.androidx.room.compiler)
+    compileOnly(mhsmpatch.rikka.hidden.stub)
+    ksp(mhsmpatch.androidx.room.compiler)
+    ksp(mhsmpatch.raamcosta.compose.destinations.ksp)
 
-    debugImplementation(npatch.androidx.compose.ui.tooling)
-    debugImplementation(npatch.androidx.customview)
-    debugImplementation(npatch.androidx.customview.poolingcontainer)
+    debugImplementation(mhsmpatch.androidx.compose.ui.tooling)
+    debugImplementation(mhsmpatch.androidx.customview)
+    debugImplementation(mhsmpatch.androidx.customview.poolingcontainer)
 }

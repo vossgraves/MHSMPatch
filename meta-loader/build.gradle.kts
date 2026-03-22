@@ -15,7 +15,7 @@ android {
             proguardFiles("proguard-rules.pro")
         }
     }
-    namespace = "org.lsposed.npatch.metaloader"
+    namespace = "org.lsposed.mhsmpatch.metaloader"
 }
 
 androidComponents.onVariants { variant ->
@@ -29,7 +29,7 @@ androidComponents.onVariants { variant ->
             "$buildDir/intermediates/dex/$variantLowered/mergeDex$variantCapped"
         from(dexOutPath)
         rename("classes.dex", "metaloader.dex")
-        into("${rootProject.projectDir}/out/assets/${variant.name}/npatch")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/mhsmpatch")
     }
 
     task("copy$variantCapped") {

@@ -1,12 +1,12 @@
 # Neo LSPatch Framework
 
-[![Build](https://img.shields.io/github/actions/workflow/status/7723mod/NPatch/main.yml?branch=master&logo=github&label=Build&event=push)](https://github.com/7723mod/NPatch/actions/workflows/main.yml?query=event%3Apush+is%3Acompleted+branch%3Amaster) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lspatch_jingmatrix) [![Download](https://img.shields.io/github/v/release/7723mod/NPatch?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/7723mod/NPatch/releases/latest) [![Total](https://shields.io/github/downloads/7723mod/NPatch/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/7723mod/NPatch/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/7723mod/MHSMPatch/main.yml?branch=master&logo=github&label=Build&event=push)](https://github.com/7723mod/MHSMPatch/actions/workflows/main.yml?query=event%3Apush+is%3Acompleted+branch%3Amaster) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lspatch_jingmatrix) [![Download](https://img.shields.io/github/v/release/7723mod/MHSMPatch?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/7723mod/MHSMPatch/releases/latest) [![Total](https://shields.io/github/downloads/7723mod/MHSMPatch/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/7723mod/MHSMPatch/releases)
 
 ## Introduction 
 
 Rootless implementation of LSPosed framework, integrating Xposed API by inserting dex and so into the target APK.
 
-We sincerely invite you to join our [Telegram](https://t.me/NPatch) group to get more information and updates about NPatch.
+We sincerely invite you to join our [Telegram](https://t.me/MHSMPatch) group to get more information and updates about MHSMPatch.
 
 ## Supported Versions
 
@@ -15,15 +15,15 @@ We sincerely invite you to join our [Telegram](https://t.me/NPatch) group to get
 
 ## Download
 
-For stable releases, please go to [Github Releases page](https://github.com/7723mod/NPatch/releases)
-For canary build, please check [Github Actions](https://github.com/7723mod/NPatch/actions)
+For stable releases, please go to [Github Releases page](https://github.com/7723mod/MHSMPatch/releases)
+For canary build, please check [Github Actions](https://github.com/7723mod/MHSMPatch/actions)
 Note: debug builds are only available in Github Actions
 
 ## Usage
 
 + Through jar
-1. Download `npatch.jar`
-1. Run `java -jar npatch.jar`
+1. Download `mhsmpatch.jar`
+1. Run `java -jar mhsmpatch.jar`
 
 + Through manager
 1. Download and install `manager.apk` on an Android device
@@ -32,7 +32,7 @@ Note: debug builds are only available in Github Actions
 
 ## Star Number
 
-[![Star History Chart](https://api.star-history.com/svg?repos=7723mod/NPatch&type=Date)](https://star-history.com/#7723mod/NPatch&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=7723mod/MHSMPatch&type=Date)](https://star-history.com/#7723mod/MHSMPatch&Date)
 
 ## Translation Contributing
 
@@ -46,4 +46,4 @@ You can contribute translation [here](https://crowdin.com/project/lspatch_jingma
 
 ## License
 
-NPatch is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).
+MHSMPatch is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).

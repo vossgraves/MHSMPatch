@@ -10,8 +10,8 @@ import org.gradle.kotlin.dsl.extra
 plugins {
     alias(libs.plugins.agp.lib) apply false
     alias(libs.plugins.agp.app) apply false
-    alias(npatch.plugins.compose.compiler) apply false
-    alias(npatch.plugins.kotlin.android) apply false
+    alias(mhsmpatch.plugins.compose.compiler) apply false
+    alias(mhsmpatch.plugins.kotlin.android) apply false
 }
 
 buildscript {
@@ -46,7 +46,7 @@ val (coreCommitCount, coreLatestTag) = FileRepositoryBuilder().setGitDir(rootPro
     }.getOrNull() ?: (1145 to "1.0")
 
 // sync from https://github.com/JingMartix/LSPosed/blob/master/build.gradle.kts
-val defaultManagerPackageName by extra("org.lsposed.npatch")
+val defaultManagerPackageName by extra("org.lsposed.mhsmpatch")
 val apiCode by extra(100)
 val verCode by extra(commitCount)
 val verName by extra("0.7.4")
@@ -66,7 +66,7 @@ tasks.register<Delete>("clean") {
 
 listOf("Debug", "Release").forEach { variant ->
     tasks.register("build$variant") {
-        description = "Build NPatch with $variant"
+        description = "Build MHSMPatch with $variant"
         dependsOn(tasks.findByPath(":jar:build$variant") ?: "jar:build$variant")
         dependsOn(tasks.findByPath(":manager:build$variant") ?: "manager:build$variant")
     }

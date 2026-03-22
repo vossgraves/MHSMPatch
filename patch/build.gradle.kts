@@ -21,7 +21,7 @@ dependencies {
     implementation(projects.share.java)
     implementation(projects.external.axml)
 
-    implementation(npatch.commons.io)
-    implementation(npatch.beust.jcommander)
-    implementation(npatch.google.gson)
+    implementation(mhsmpatch.commons.io)
+    implementation(mhsmpatch.beust.jcommander)
+    implementation(mhsmpatch.google.gson)
 }
