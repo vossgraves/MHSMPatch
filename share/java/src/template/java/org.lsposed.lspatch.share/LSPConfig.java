@@ -1,4 +1,4 @@
-package org.lsposed.mhsmpatch.share;
+package org.lsposed.oqpatch.share;
 
 public class LSPConfig {
 

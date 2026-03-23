@@ -26,7 +26,7 @@ android {
             version = "3.31.6"
         }
     }
-    namespace = "org.lsposed.mhsmpatch.loader"
+    namespace = "org.lsposed.oqpatch.loader"
 }
 
 androidComponents.onVariants { variant ->
@@ -36,7 +36,7 @@ androidComponents.onVariants { variant ->
         dependsOn("assemble$variantCapped")
         from(layout.buildDirectory.file("intermediates/dex/${variant.name}/mergeDex$variantCapped/classes.dex"))
         rename("classes.dex", "loader.dex")
-        into("${rootProject.projectDir}/out/assets/${variant.name}/mhsmpatch")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/oqpatch")
     }
 
     val copySoTask = tasks.register<Copy>("copySo$variantCapped") {
@@ -46,10 +46,10 @@ androidComponents.onVariants { variant ->
         from(
             fileTree(
                 "dir" to layout.buildDirectory.dir("intermediates/stripped_native_libs/${variant.name}/strip${variantCapped}DebugSymbols/out/lib"),
-                "include" to listOf("**/libmhsmpatch.so")
+                "include" to listOf("**/liboqpatch.so")
             )
         )
-        into("${rootProject.projectDir}/out/assets/${variant.name}/mhsmpatch/so")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/oqpatch/so")
     }
 
     tasks.register("copy$variantCapped") {

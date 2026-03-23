@@ -83,7 +83,7 @@ namespace lspd {
     }
 
     void PatchLoader::SetupEntryClass(JNIEnv* env) {
-        ScopedLocalRef<jclass> entry_class(FindClassFromLoader(env, GetCurrentClassLoader(), "org.lsposed.mhsmpatch.loader.LSPApplication"));
+        ScopedLocalRef<jclass> entry_class(FindClassFromLoader(env, GetCurrentClassLoader(), "org.lsposed.oqpatch.loader.LSPApplication"));
         if (entry_class) {
             entry_class_ = JNI_NewGlobalRef(env, entry_class.get());
         } else {
@@ -104,7 +104,7 @@ namespace lspd {
                 [](auto symbol) { return GetArt()->getSymbPrefixFirstAddress(symbol); },
         };
 
-        auto stub = JNI_FindClass(env, "org/lsposed/mhsmpatch/metaloader/LSPAppComponentFactoryStub");
+        auto stub = JNI_FindClass(env, "org/lsposed/oqpatch/metaloader/LSPAppComponentFactoryStub");
         auto dex_field = JNI_GetStaticFieldID(env, stub, "dex", "[B");
         ScopedLocalRef<jbyteArray> array = JNI_GetStaticObjectField(env, stub, dex_field);
 

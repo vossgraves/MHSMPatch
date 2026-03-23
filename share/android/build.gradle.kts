@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "org.lsposed.mhsmpatch.share"
+    namespace = "org.lsposed.oqpatch.share"
 
     buildFeatures {
         androidResources = false

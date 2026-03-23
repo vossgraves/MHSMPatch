@@ -119,14 +119,14 @@ jobs:
     - name: 上傳 Release Artifact
       uses: actions/upload-artifact@v5
       with:
-        name: mhsmpatch-release-${{ env.commit }}
+        name: oqpatch-release-${{ env.commit }}
         path: out/release/*
         retention-days: 14
 
     - name: 上傳 Debug Artifact
       uses: actions/upload-artifact@v5
       with:
-        name: mhsmpatch-debug-${{ env.commit }}
+        name: oqpatch-debug-${{ env.commit }}
         path: out/debug/*
         retention-days: 7
 

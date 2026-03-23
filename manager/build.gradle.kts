@@ -9,10 +9,10 @@ val coreVerName: String by rootProject.extra
 
 plugins {
     alias(libs.plugins.agp.app)
-    alias(mhsmpatch.plugins.compose.compiler)
-    alias(mhsmpatch.plugins.google.devtools.ksp)
-    alias(mhsmpatch.plugins.rikka.tools.refine)
-    alias(mhsmpatch.plugins.kotlin.android)
+    alias(oqpatch.plugins.compose.compiler)
+    alias(oqpatch.plugins.google.devtools.ksp)
+    alias(oqpatch.plugins.rikka.tools.refine)
+    alias(oqpatch.plugins.kotlin.android)
     id("kotlin-parcelize")
 }
 
@@ -49,7 +49,7 @@ android {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
 
-    namespace = "org.lsposed.mhsmpatch"
+    namespace = "org.lsposed.oqpatch"
 
     applicationVariants.all {
         kotlin.sourceSets {
@@ -83,7 +83,7 @@ afterEvaluate {
             dependsOn("assemble$variantCapped")
             from(variant.outputs.map { it.outputFile })
             into("${rootProject.projectDir}/out/$variantLowered")
-            rename(".*.apk", "MHSMPatch-v$verName-$verCode-$variantLowered.apk")
+            rename(".*.apk", "OQPatch-v$verName-$verCode-$variantLowered.apk")
         }
     }
 }
@@ -94,37 +94,37 @@ dependencies {
     implementation(projects.share.android)
     implementation(projects.share.java)
 
-    implementation(platform(mhsmpatch.androidx.compose.bom))
-    implementation(mhsmpatch.androidx.activity.compose)
-    implementation(mhsmpatch.androidx.compose.material.icons.extended)
-    implementation(mhsmpatch.androidx.compose.material3)
-    implementation(mhsmpatch.androidx.compose.ui)
-    implementation(mhsmpatch.androidx.compose.ui.tooling.preview)
-    implementation(mhsmpatch.androidx.core.ktx)
-    implementation(mhsmpatch.androidx.lifecycle.viewmodel.compose)
-    implementation(mhsmpatch.androidx.navigation.compose)
+    implementation(platform(oqpatch.androidx.compose.bom))
+    implementation(oqpatch.androidx.activity.compose)
+    implementation(oqpatch.androidx.compose.material.icons.extended)
+    implementation(oqpatch.androidx.compose.material3)
+    implementation(oqpatch.androidx.compose.ui)
+    implementation(oqpatch.androidx.compose.ui.tooling.preview)
+    implementation(oqpatch.androidx.core.ktx)
+    implementation(oqpatch.androidx.lifecycle.viewmodel.compose)
+    implementation(oqpatch.androidx.navigation.compose)
     implementation(libs.androidx.preference)
-    implementation(mhsmpatch.androidx.room.ktx)
-    implementation(mhsmpatch.androidx.room.runtime)
+    implementation(oqpatch.androidx.room.ktx)
+    implementation(oqpatch.androidx.room.runtime)
 
-    implementation(mhsmpatch.google.accompanist.navigation.animation)
-    implementation(mhsmpatch.google.accompanist.pager)
-    implementation(mhsmpatch.google.accompanist.swiperefresh)
+    implementation(oqpatch.google.accompanist.navigation.animation)
+    implementation(oqpatch.google.accompanist.pager)
+    implementation(oqpatch.google.accompanist.swiperefresh)
     implementation(libs.material)
     implementation(libs.gson)
-    implementation(mhsmpatch.rikka.shizuku.api)
-    implementation(mhsmpatch.rikka.shizuku.provider)
-    implementation(mhsmpatch.rikka.refine)
-    implementation(mhsmpatch.raamcosta.compose.destinations)
+    implementation(oqpatch.rikka.shizuku.api)
+    implementation(oqpatch.rikka.shizuku.provider)
+    implementation(oqpatch.rikka.refine)
+    implementation(oqpatch.raamcosta.compose.destinations)
     implementation(libs.appiconloader)
     implementation(libs.hiddenapibypass)
 
-    annotationProcessor(mhsmpatch.androidx.room.compiler)
-    compileOnly(mhsmpatch.rikka.hidden.stub)
-    ksp(mhsmpatch.androidx.room.compiler)
-    ksp(mhsmpatch.raamcosta.compose.destinations.ksp)
+    annotationProcessor(oqpatch.androidx.room.compiler)
+    compileOnly(oqpatch.rikka.hidden.stub)
+    ksp(oqpatch.androidx.room.compiler)
+    ksp(oqpatch.raamcosta.compose.destinations.ksp)
 
-    debugImplementation(mhsmpatch.androidx.compose.ui.tooling)
-    debugImplementation(mhsmpatch.androidx.customview)
-    debugImplementation(mhsmpatch.androidx.customview.poolingcontainer)
+    debugImplementation(oqpatch.androidx.compose.ui.tooling)
+    debugImplementation(oqpatch.androidx.customview)
+    debugImplementation(oqpatch.androidx.customview.poolingcontainer)
 }

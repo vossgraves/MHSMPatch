@@ -18,7 +18,7 @@
     <!-- Home Screen -->
     <string name="home_shizuku_warning">部分功能不可用</string>
     <string name="home_api_version">API 版本</string>
-    <string name="home_mhsmpatch_version">MHSMPatch 版本</string>
+    <string name="home_oqpatch_version">OQPatch 版本</string>
     <string name="home_framework_version">框架版本</string>
     <string name="home_system_version">系统版本</string>
     <string name="home_device">设备</string>
@@ -27,7 +27,7 @@
     <string name="home_system_abi">系统架构</string>
     <string name="home_info_copied">已复制到剪贴板</string>
     <string name="home_support">支持</string>
-    <string name="home_description">MHSMPatch 是一款免费且迭代于 LSPatch 的，基于 LSPosed 核心的免 Root 的 Xposed 框架。</string>
+    <string name="home_description">OQPatch 是一款免费且迭代于 LSPatch 的，基于 LSPosed 核心的免 Root 的 Xposed 框架。</string>
     <string name="home_view_source_code"><![CDATA[查看源代码 %1$s<br/>加入我们的 %2$s 频道]]></string>
     <!-- Manage Screen -->
     <string name="screen_manage">管理</string>
@@ -55,9 +55,9 @@
     <string name="patch_from_applist">选择已安装的应用程序</string>
     <string name="patch_mode">修补模式</string>
     <string name="patch_local">本地模式</string>
-    <string name="patch_local_desc">为未嵌入模块的应用程序打补丁。\nXposed 范围可动态更改，无需重新打补丁。\n此模式下的应用程式只能在本地设备上与 MHSMPatch 管理器搭配使用。</string>
+    <string name="patch_local_desc">为未嵌入模块的应用程序打补丁。\nXposed 范围可动态更改，无需重新打补丁。\n此模式下的应用程式只能在本地设备上与 OQPatch 管理器搭配使用。</string>
     <string name="patch_integrated">集成模式</string>
-    <string name="patch_integrated_desc">修补 App 并内置模块。\n经修补的应用可以在没有管理器的情况下独立运行，但不能动态管理配置。\n此模式适用于需要在未安装 MHSMPatch 管理器的设备上运行的应用程式。</string>
+    <string name="patch_integrated_desc">修补 App 并内置模块。\n经修补的应用可以在没有管理器的情况下独立运行，但不能动态管理配置。\n此模式适用于需要在未安装 OQPatch 管理器的设备上运行的应用程式。</string>
     <string name="patch_embed_modules">嵌入模块</string>
     <string name="patch_debuggable">可调试</string>
     <string name="patch_sigbypass">破解签名校验</string>

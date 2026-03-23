@@ -93,7 +93,7 @@
 
         <provider
             android:name=".manager.ConfigProvider"
-            android:authorities="org.lsposed.mhsmpatch.manager.provider.config"
+            android:authorities="org.lsposed.oqpatch.manager.provider.config"
             android:exported="true"
             android:enabled="true" />
 
