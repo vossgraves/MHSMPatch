@@ -1,4 +1,4 @@
-package org.lsposed.lspatch;
+package org.lsposed.oqpatch;
 
 interface IShizukuService {
     // Executes a shell command and returns the output
