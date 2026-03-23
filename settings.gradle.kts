@@ -18,13 +18,13 @@ dependencyResolutionManagement {
         create("libs") {
             from(files("core/gradle/libs.versions.toml"))
         }
-        create("lspatch") {
-            from(files("gradle/lspatch.versions.toml"))
+        create("oqpatch") {
+            from(files("gradle/oqpatch.versions.toml"))
         }
     }
 }
 
-rootProject.name = "LSPatch"
+rootProject.name = "OQPatch"
 include(
     ":apkzlib",
     ":jar",

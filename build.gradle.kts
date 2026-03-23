@@ -9,8 +9,8 @@ import com.android.build.gradle.LibraryExtension
 plugins {
     alias(libs.plugins.agp.lib) apply false
     alias(libs.plugins.agp.app) apply false
-    alias(lspatch.plugins.compose.compiler) apply false
-    alias(lspatch.plugins.kotlin.android) apply false
+    alias(oqpatch.plugins.compose.compiler) apply false
+    alias(oqpatch.plugins.kotlin.android) apply false
 }
 
 buildscript {
@@ -45,7 +45,7 @@ val (coreCommitCount, coreLatestTag) = FileRepositoryBuilder().setGitDir(rootPro
     }.getOrNull() ?: (1 to "1.0")
 
 // sync from https://github.com/JingMatrix/LSPosed/blob/master/build.gradle.kts
-val defaultManagerPackageName by extra("org.lsposed.lspatch")
+val defaultManagerPackageName by extra("org.lsposed.oqpatch")
 val apiCode by extra(93)
 val verCode by extra(commitCount)
 val verName by extra("0.8")
@@ -65,7 +65,7 @@ tasks.register<Delete>("clean") {
 
 listOf("Debug", "Release").forEach { variant ->
     tasks.register("build$variant") {
-        description = "Build LSPatch with $variant"
+        description = "Build OQPatch with $variant"
         dependsOn(projects.jar.dependencyProject.tasks["build$variant"])
         dependsOn(projects.manager.dependencyProject.tasks["build$variant"])
     }

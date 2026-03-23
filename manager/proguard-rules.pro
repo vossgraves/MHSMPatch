@@ -10,11 +10,11 @@
 }
 
 -keep class com.beust.jcommander.** { *; }
--keep class org.lsposed.lspatch.database.** { *; }
--keep class org.lsposed.lspatch.Patcher$Options { *; }
--keep class org.lsposed.lspatch.share.LSPConfig { *; }
--keep class org.lsposed.lspatch.share.PatchConfig { *; }
--keepclassmembers class org.lsposed.patch.LSPatch {
+-keep class org.lsposed.oqpatch.database.** { *; }
+-keep class org.lsposed.oqpatch.Patcher$Options { *; }
+-keep class org.lsposed.oqpatch.share.LSPConfig { *; }
+-keep class org.lsposed.oqpatch.share.PatchConfig { *; }
+-keepclassmembers class org.lsposed.patch.OQPatch {
     private <fields>;
 }
 -dontwarn com.google.auto.value.AutoValue$Builder

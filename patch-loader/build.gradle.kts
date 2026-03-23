@@ -25,7 +25,7 @@ android {
             path("src/main/jni/CMakeLists.txt")
         }
     }
-    namespace = "org.lsposed.lspatch.loader"
+    namespace = "org.lsposed.oqpatch.loader"
 }
 
 androidComponents.onVariants { variant ->
@@ -35,7 +35,7 @@ androidComponents.onVariants { variant ->
         dependsOn("assemble$variantCapped")
         from("$buildDir/intermediates/dex/${variant.name}/mergeDex$variantCapped/classes.dex")
         rename("classes.dex", "loader.dex")
-        into("${rootProject.projectDir}/out/assets/${variant.name}/lspatch")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/oqpatch")
     }
 
     task<Copy>("copySo$variantCapped") {
@@ -45,10 +45,10 @@ androidComponents.onVariants { variant ->
         from(
             fileTree(
                 "dir" to "$buildDir/intermediates/stripped_native_libs/$libDir/out/lib",
-                "include" to listOf("**/liblspatch.so")
+                "include" to listOf("**/liboqpatch.so")
             )
         )
-        into("${rootProject.projectDir}/out/assets/${variant.name}/lspatch/so")
+        into("${rootProject.projectDir}/out/assets/${variant.name}/oqpatch/so")
     }
 
     task("copy$variantCapped") {

@@ -70,13 +70,13 @@ jobs:
     - name: Upload Debug artifact
       uses: actions/upload-artifact@v4
       with:
-        name: lspatch-debug-${{ env.commit }}
+        name: oqpatch-debug-${{ env.commit }}
         path: out/debug/*
 
     - name: Upload Release artifact
       uses: actions/upload-artifact@v4
       with:
-        name: lspatch-release-${{ env.commit }}
+        name: oqpatch-release-${{ env.commit }}
         path: out/release/*
 
     - name: Upload mappings

@@ -20,7 +20,7 @@ fun Jar.configure(variant: String) {
     archiveBaseName.set("jar-v$verName-$verCode-$variant")
     destinationDirectory.set(file("${rootProject.projectDir}/out/$variant"))
     manifest {
-        attributes("Main-Class" to "org.lsposed.patch.LSPatch")
+        attributes("Main-Class" to "org.lsposed.patch.OQPatch")
     }
     dependsOn(configurations.runtimeClasspath)
     from(configurations.runtimeClasspath.map { configuration ->

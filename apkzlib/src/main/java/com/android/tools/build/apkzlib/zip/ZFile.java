@@ -284,7 +284,7 @@ public class ZFile implements Closeable {
    */
   private final List<StoredEntry> uncompressedEntries;
 
-  /** LSPatch
+  /** OQPatch
    *
    */
   private final List<StoredEntry> linkingEntries;
@@ -1408,7 +1408,7 @@ public class ZFile implements Closeable {
 
     int r;
     // Put header data to the beginning of buffer
-    // LSPatch: write extra entries in the extra field if it's a linking
+    // OQPatch: write extra entries in the extra field if it's a linking
     int localHeaderSize = entry.getLocalHeaderSize();
     for (var segment : entry.getLocalExtra().getSegments()) {
       if (segment instanceof ExtraField.LinkingEntrySegment) {

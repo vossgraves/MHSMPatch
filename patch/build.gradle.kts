@@ -21,7 +21,7 @@ dependencies {
     implementation("vector:axml")
     implementation(projects.share.java)
 
-    implementation(lspatch.commons.io)
-    implementation(lspatch.beust.jcommander)
-    implementation(lspatch.google.gson)
+    implementation(oqpatch.commons.io)
+    implementation(oqpatch.beust.jcommander)
+    implementation(oqpatch.google.gson)
 }

@@ -39,7 +39,7 @@
 
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
-            android:authorities="org.lsposed.lspatch.shizuku"
+            android:authorities="org.lsposed.oqpatch.shizuku"
             android:enabled="true"
             android:exported="true"
             android:multiprocess="false"
