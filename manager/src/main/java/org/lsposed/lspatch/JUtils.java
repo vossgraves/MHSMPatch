@@ -56,7 +56,7 @@ public class JUtils {
             ApplicationInfo info = manager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
             return info.metaData == null || !info.metaData.containsKey("lspatch");
         }catch (Exception e){
-            Log.i("OPatch",Log.getStackTraceString(e));
+            Log.i("MHSM",Log.getStackTraceString(e));
             return false;
         }
     }
@@ -64,7 +64,7 @@ public class JUtils {
     public static void installApkByPackageManager(Context context,File apkPath){
         GlobalUserHandler.mHandler.size();
         try {
-            Log.i("OPatchOutput", "RequestInstall: " + apkPath);
+            Log.i("MHSMOutput", "RequestInstall: " + apkPath);
             String e = context.getExternalCacheDir() + "/install.apk";
             File file = new File(e);
             if (file.exists()) {
@@ -84,7 +84,7 @@ public class JUtils {
 
             context.startActivity(intent);
         }catch (Exception e){
-           Log.i("OPatchOutput", Log.getStackTraceString(e));
+           Log.i("MHSMOutput", Log.getStackTraceString(e));
         }
     }
     public static void copy(String source, String dest) {
@@ -126,13 +126,13 @@ public class JUtils {
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     public static List<String> processApkPath(Context context, List<String> paths){
-        Log.i("OPatchOutput", "processApkPath: " + paths.toString());
+        Log.i("MHSMOutput", "processApkPath: " + paths.toString());
         if (paths.size() == 1){
             String apkPath = paths.get(0);
             try (ZipFile zInp = new ZipFile(apkPath)){
                 ZipEntry entry = zInp.getEntry("assets/lspatch/origin.apk");
 
-                Log.i("OPatchOutput", "processApkPath: " + entry);
+                Log.i("MHSMOutput", "processApkPath: " + entry);
                 if (entry != null){
                     String cachePath = context.getCacheDir().getAbsolutePath() + File.separator + "lspatch" + File.separator + System.currentTimeMillis()+".apk";
                     File newFile = new File(cachePath).getParentFile();
@@ -145,7 +145,7 @@ public class JUtils {
                     paths.set(0,cachePath);
                 }
             } catch (IOException e) {
-                Log.i("OPatchOutput", "processApkPath: " + e);
+                Log.i("MHSMOutput", "processApkPath: " + e);
                 return paths;
             }
             return paths;

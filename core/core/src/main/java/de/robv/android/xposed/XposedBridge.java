@@ -65,7 +65,7 @@ public final class XposedBridge {
     /**
      * @hide
      */
-    public static final String TAG = "OPatch";
+    public static final String TAG = "MHSM";
 
     /**
      * @deprecated Use {@link #getXposedVersion()} instead.

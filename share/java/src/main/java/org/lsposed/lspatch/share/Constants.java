@@ -9,9 +9,9 @@ public class Constants {
     final static public String ORIGINAL_APK_ASSET_PATH = "assets/lspatch/origin.apk";
     final static public String EMBEDDED_MODULES_ASSET_PATH = "assets/lspatch/modules/";
 
-    final static public String PATCH_FILE_SUFFIX = "-opatched.apk";
+    final static public String PATCH_FILE_SUFFIX = "-mhsmed.apk";
     final static public String PROXY_APP_COMPONENT_FACTORY = "org.lsposed.lspatch.metaloader.LSPAppComponentFactoryStub";
-    final static public String MANAGER_PACKAGE_NAME = "org.lsposed.opatch";
+    final static public String MANAGER_PACKAGE_NAME = "org.lsposed.mhsm";
     final static public int MIN_ROLLING_VERSION_CODE = 348;
 
     final static public int SIGBYPASS_LV_DISABLE = 0;

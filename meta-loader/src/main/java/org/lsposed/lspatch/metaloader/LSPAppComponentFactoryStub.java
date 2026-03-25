@@ -18,7 +18,7 @@ import java.util.Objects;
 @SuppressLint("UnsafeDynamicallyLoadedCode")
 public class LSPAppComponentFactoryStub extends AppComponentFactory {
 
-    private static final String TAG = "OPatch-MetaLoader";
+    private static final String TAG = "MHSM-MetaLoader";
     private static final Map<String, String> archToLib = new HashMap<String, String>(4);
 
     public static byte[] dex;

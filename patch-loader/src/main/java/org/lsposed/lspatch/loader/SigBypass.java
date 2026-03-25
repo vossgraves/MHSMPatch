@@ -32,7 +32,7 @@ import de.robv.android.xposed.XposedHelpers;
 
 public class SigBypass {
 
-    private static final String TAG = "OPatch-SigBypass";
+    private static final String TAG = "MHSM-SigBypass";
     private static final Map<String, String> signatures = new HashMap<>();
 
     private static void replaceSignature(Context context, PackageInfo packageInfo) {
@@ -149,7 +149,7 @@ public class SigBypass {
         if (sigBypassLevel >= Constants.SIGBYPASS_LV_PM_OPENAT) {
             String cacheApkPath;
             try (ZipFile sourceFile = new ZipFile(context.getPackageResourcePath())) {
-                cacheApkPath = context.getCacheDir() + "/opatch/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
+                cacheApkPath = context.getCacheDir() + "/mhsm/origin/" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk";
             }
             Log.i(TAG, "Replace Path: " + context.getPackageResourcePath() + " -> " + cacheApkPath);
             org.lsposed.lspd.nativebridge.SigBypass.enableOpenatHook(context.getPackageResourcePath(), cacheApkPath);

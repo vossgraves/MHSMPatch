@@ -165,7 +165,7 @@ public class LSPatch {
             outputDir.mkdirs();
 
             File outputFile = new File(outputDir, String.format(
-                    Locale.getDefault(), "%s-%d-opatched.apk",
+                    Locale.getDefault(), "%s-%d-mhsmed.apk",
                     FilenameUtils.getBaseName(apkFileName),
                     LSPConfig.instance.VERSION_CODE)
             ).getAbsoluteFile();

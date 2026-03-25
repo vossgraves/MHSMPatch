@@ -58,7 +58,7 @@ import hidden.HiddenApiBridge;
 @SuppressWarnings("unused")
 public class LSPApplication {
 
-    private static final String TAG = "OPatch";
+    private static final String TAG = "MHSM";
     private static final int FIRST_APP_ZYGOTE_ISOLATED_UID = 90000;
     private static final int PER_USER_RANGE = 100000;
 
@@ -97,7 +97,7 @@ public class LSPApplication {
                     moduleObj.put("packageName",module.packageName);
                     moduleArr.put(moduleObj);
                 }
-                SharedPreferences shared = context.getSharedPreferences("opatch", Context.MODE_PRIVATE);
+                SharedPreferences shared = context.getSharedPreferences("mhsm", Context.MODE_PRIVATE);
                 shared.edit().putString("modules",moduleArr.toString()).commit();
                 Log.e(TAG, "Success update module scope");
             }catch (Exception e){
@@ -116,7 +116,7 @@ public class LSPApplication {
         // before forkPostCommon is invoke. Otherwise, you will get failure of XResources
 
         if (config.outputLog){
-            XposedBridge.setLogPrinter(new XposedLogPrinter(0,"OPatch"));
+            XposedBridge.setLogPrinter(new XposedLogPrinter(0,"MHSM"));
         }
         Log.i(TAG, "Load modules");
         LSPLoader.initModules(stubLoadedApk);
@@ -153,7 +153,7 @@ public class LSPApplication {
             Log.i(TAG, "Use manager: " + config.useManager);
             Log.i(TAG, "Signature bypass level: " + config.sigBypassLevel);
 
-            Path originPath = Paths.get(appInfo.dataDir, "cache/opatch/origin/");
+            Path originPath = Paths.get(appInfo.dataDir, "cache/mhsm/origin/");
             Path cacheApkPath;
             try (ZipFile sourceFile = new ZipFile(appInfo.sourceDir)) {
                 cacheApkPath = originPath.resolve(sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc() + ".apk");
@@ -178,7 +178,7 @@ public class LSPApplication {
             Path providerPath = null;
             if (config.injectProvider){
                 try (ZipFile sourceFile = new ZipFile(sourceFileaa)) {
-                    providerPath = Paths.get(appInfo.dataDir, "cache/opatch/origin/p_" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc()+".dex");
+                    providerPath = Paths.get(appInfo.dataDir, "cache/mhsm/origin/p_" + sourceFile.getEntry(ORIGINAL_APK_ASSET_PATH).getCrc()+".dex");
                     Files.deleteIfExists(providerPath);
                     try (InputStream is = baseClassLoader.getResourceAsStream(PROVIDER_DEX_ASSET_PATH)) {
                         Files.copy(is, providerPath);

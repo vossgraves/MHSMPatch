@@ -49,7 +49,7 @@
             android:exported="true"
             tools:ignore="ExportedService" />
         <provider
-            android:authorities="org.lsposed.opatch.FileProvider"
+            android:authorities="org.lsposed.mhsm.FileProvider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true"
