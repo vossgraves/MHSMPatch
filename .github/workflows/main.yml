@@ -1,7 +1,7 @@
 name: Build Adnroid CI
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -88,13 +88,13 @@ jobs:
     - name: Upload Debug artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: lspatch-debug
+        name: spotmanager-debug
         path: out/debug/*
 
     - name: Upload Release artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: lspatch-release
+        name: spotmanager-release
         path: out/release/*
 
     - name: Upload ProGuard mappings
