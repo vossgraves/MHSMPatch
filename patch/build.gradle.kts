@@ -21,7 +21,7 @@ dependencies {
     implementation(projects.share.java)
     implementation("vector:axml")
 
-    implementation(npatch.commons.io)
-    implementation(npatch.beust.jcommander)
-    implementation(npatch.google.gson)
+    implementation(spotmanager.commons.io)
+    implementation(spotmanager.beust.jcommander)
+    implementation(spotmanager.google.gson)
 }

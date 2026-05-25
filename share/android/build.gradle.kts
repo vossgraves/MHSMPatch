@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "top.nkbe.npatch.share"
+    namespace = "top.winner02.spotmanager.share"
 
     buildFeatures {
         androidResources = false

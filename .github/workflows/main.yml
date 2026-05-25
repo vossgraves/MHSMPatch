@@ -81,7 +81,7 @@ jobs:
         echo "正在构建 libxposed service..."
         (cd libxposed/service && ./gradlew :interface:publishInterfacePublicationToMavenLocal)
 
-        echo "正在构建 NPatch..."
+        echo "正在构建 SpotManager..."
         ./gradlew buildAll
       shell: bash
 

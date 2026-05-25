@@ -6,14 +6,14 @@ val verCode: Int by rootProject.extra
 val verName: String by rootProject.extra
 val coreVerCode: Int by rootProject.extra
 val coreVerName: String by rootProject.extra
-val miuixVersion = npatch.versions.miuix.get()
+val miuixVersion = spotmanager.versions.miuix.get()
 
 plugins {
     alias(libs.plugins.agp.app)
-    alias(npatch.plugins.compose.compiler)
-    alias(npatch.plugins.google.devtools.ksp)
-    alias(npatch.plugins.rikka.tools.refine)
-    alias(npatch.plugins.kotlin.android)
+    alias(spotmanager.plugins.compose.compiler)
+    alias(spotmanager.plugins.google.devtools.ksp)
+    alias(spotmanager.plugins.rikka.tools.refine)
+    alias(spotmanager.plugins.kotlin.android)
     id("kotlin-parcelize")
 }
 
@@ -59,7 +59,7 @@ android {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
 
-    namespace = "top.nkbe.npatch"
+    namespace = "top.winner02.spotmanager"
 
     applicationVariants.all {
         kotlin.sourceSets {
@@ -81,7 +81,7 @@ afterEvaluate {
 
             val targetDir = layout.buildDirectory.dir("intermediates/assets/$variantLowered/merge${variantCapped}Assets")
             doFirst {
-                delete(targetDir.map { it.file("npatch/loader.dex") })
+                delete(targetDir.map { it.file("spotmanager/loader.dex") })
             }
             into(targetDir)
 
@@ -96,7 +96,7 @@ afterEvaluate {
             dependsOn("assemble$variantCapped")
             from(variant.outputs.map { it.outputFile })
             into("${rootProject.projectDir}/out/$variantLowered")
-            rename(".*.apk", "NPatch-v$verName-$verCode-$variantLowered.apk")
+            rename(".*.apk", "SpotManager-v$verName-$verCode-$variantLowered.apk")
         }
     }
 }
@@ -107,50 +107,50 @@ dependencies {
     implementation(projects.share.java)
     implementation("vector:daemon-service")
 
-    implementation(platform(npatch.androidx.compose.bom))
-    implementation(npatch.androidx.activity.compose)
-    implementation(npatch.androidx.compose.material.icons.extended)
-    implementation(npatch.androidx.compose.material3)
-    implementation(npatch.androidx.compose.ui)
-    implementation(npatch.androidx.compose.ui.tooling.preview)
-    implementation(npatch.androidx.core.ktx)
+    implementation(platform(spotmanager.androidx.compose.bom))
+    implementation(spotmanager.androidx.activity.compose)
+    implementation(spotmanager.androidx.compose.material.icons.extended)
+    implementation(spotmanager.androidx.compose.material3)
+    implementation(spotmanager.androidx.compose.ui)
+    implementation(spotmanager.androidx.compose.ui.tooling.preview)
+    implementation(spotmanager.androidx.core.ktx)
     implementation(libs.material)
-    implementation(npatch.androidx.datastore.preferences)
-    implementation(npatch.coil.compose)
+    implementation(spotmanager.androidx.datastore.preferences)
+    implementation(spotmanager.coil.compose)
     implementation(libs.gson)
-    implementation(npatch.androidx.lifecycle.viewmodel.compose)
-    implementation(npatch.androidx.navigation3.runtime)
-    implementation(npatch.androidx.navigation3.ui)
+    implementation(spotmanager.androidx.lifecycle.viewmodel.compose)
+    implementation(spotmanager.androidx.navigation3.runtime)
+    implementation(spotmanager.androidx.navigation3.ui)
     implementation(libs.androidx.preference)
-    implementation(npatch.androidx.room.ktx)
-    implementation(npatch.androidx.room.runtime)
+    implementation(spotmanager.androidx.room.ktx)
+    implementation(spotmanager.androidx.room.runtime)
     implementation("com.squareup.okhttp3:okhttp:5.3.2")
 
     implementation(libs.material)
     implementation(libs.gson)
-    implementation(npatch.rikka.shizuku.api)
-    implementation(npatch.rikka.shizuku.provider)
-    implementation(npatch.rikka.refine)
-    //implementation(npatch.raamcosta.compose.destinations)
+    implementation(spotmanager.rikka.shizuku.api)
+    implementation(spotmanager.rikka.shizuku.provider)
+    implementation(spotmanager.rikka.refine)
+    //implementation(spotmanager.raamcosta.compose.destinations)
     implementation(libs.appiconloader)
     implementation(libs.hiddenapibypass)
 
     // MiuiX & Haze
-    implementation(npatch.haze)
-    implementation(npatch.hazeBlur)
-    implementation(npatch.backdrop)
+    implementation(spotmanager.haze)
+    implementation(spotmanager.hazeBlur)
+    implementation(spotmanager.backdrop)
     implementation("top.yukonga.miuix.kmp:miuix-ui:$miuixVersion")
     implementation("top.yukonga.miuix.kmp:miuix-preference:$miuixVersion")
     implementation("top.yukonga.miuix.kmp:miuix-icons:$miuixVersion")
-    implementation(npatch.androidx.webkit)
+    implementation(spotmanager.androidx.webkit)
 
 
-    annotationProcessor(npatch.androidx.room.compiler)
-    compileOnly(npatch.rikka.hidden.stub)
-    ksp(npatch.androidx.room.compiler)
-    //ksp(npatch.raamcosta.compose.destinations.ksp)
+    annotationProcessor(spotmanager.androidx.room.compiler)
+    compileOnly(spotmanager.rikka.hidden.stub)
+    ksp(spotmanager.androidx.room.compiler)
+    //ksp(spotmanager.raamcosta.compose.destinations.ksp)
 
-    debugImplementation(npatch.androidx.compose.ui.tooling)
-    debugImplementation(npatch.androidx.customview)
-    debugImplementation(npatch.androidx.customview.poolingcontainer)
+    debugImplementation(spotmanager.androidx.compose.ui.tooling)
+    debugImplementation(spotmanager.androidx.customview)
+    debugImplementation(spotmanager.androidx.customview.poolingcontainer)
 }

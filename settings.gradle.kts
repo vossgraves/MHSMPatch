@@ -27,13 +27,13 @@ dependencyResolutionManagement {
         create("libs") {
             from(files("core/gradle/libs.versions.toml"))
         }
-        create("npatch") {
-            from(files("gradle/npatch.versions.toml"))
+        create("spotmanager") {
+            from(files("gradle/spotmanager.versions.toml"))
         }
     }
 }
 
-rootProject.name = "NPatch"
+rootProject.name = "SpotManager"
 include(
     ":apkzlib",
     ":jar",

@@ -1,4 +1,4 @@
--keep class top.nkbe.npatch.metaloader.LSPAppComponentFactoryStub {
+-keep class top.winner02.spotmanager.metaloader.LSPAppComponentFactoryStub {
     public static byte[] dex;
     <init>();
 }
