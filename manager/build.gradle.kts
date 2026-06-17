@@ -124,7 +124,7 @@ dependencies {
     implementation(libs.androidx.preference)
     implementation(spotmanager.androidx.room.ktx)
     implementation(spotmanager.androidx.room.runtime)
-    implementation("com.squareup.okhttp3:okhttp:5.3.2")
+    implementation("com.squareup.okhttp3:okhttp:5.4.0")
 
     implementation(libs.material)
     implementation(libs.gson)
